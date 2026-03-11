@@ -1,0 +1,160 @@
+## ECP5 Versa Board - RGMII Passthrough Pin Constraints
+
+## ============================================================
+## PHY 1 (U14) - FPGA Bank 2, VCCIO = 2.5V
+## ============================================================
+
+# PHY 1 clocks
+LOCATE COMP "phy1_rxclk"    SITE "L20";
+
+# PHY 1 TX
+LOCATE COMP "phy1_txclk"    SITE "P19";
+LOCATE COMP "phy1_txd[0]"   SITE "N19";
+LOCATE COMP "phy1_txd[1]"   SITE "N20";
+LOCATE COMP "phy1_txd[2]"   SITE "P18";
+LOCATE COMP "phy1_txd[3]"   SITE "P20";
+LOCATE COMP "phy1_txctrl"   SITE "R20";
+
+# PHY 1 RX
+LOCATE COMP "phy1_rxd[0]"   SITE "T20";
+LOCATE COMP "phy1_rxd[1]"   SITE "U20";
+LOCATE COMP "phy1_rxd[2]"   SITE "T19";
+LOCATE COMP "phy1_rxd[3]"   SITE "R18";
+LOCATE COMP "phy1_rxctrl"   SITE "U19";
+
+# PHY 1 MDIO
+LOCATE COMP "phy1_mdio"     SITE "U18";
+LOCATE COMP "phy1_mdc"      SITE "T18";
+
+# PHY 1 control
+LOCATE COMP "phy1_resetn"   SITE "U17";
+
+# PHY 1 I/O attributes
+IOBUF PORT "phy1_rxclk"     IO_TYPE=LVCMOS25;
+IOBUF PORT "phy1_txclk"     IO_TYPE=LVCMOS25 SLEWRATE=FAST;
+IOBUF PORT "phy1_txd[0]"    IO_TYPE=LVCMOS25 SLEWRATE=FAST;
+IOBUF PORT "phy1_txd[1]"    IO_TYPE=LVCMOS25 SLEWRATE=FAST;
+IOBUF PORT "phy1_txd[2]"    IO_TYPE=LVCMOS25 SLEWRATE=FAST;
+IOBUF PORT "phy1_txd[3]"    IO_TYPE=LVCMOS25 SLEWRATE=FAST;
+IOBUF PORT "phy1_txctrl"    IO_TYPE=LVCMOS25 SLEWRATE=FAST;
+IOBUF PORT "phy1_rxd[0]"    IO_TYPE=LVCMOS25;
+IOBUF PORT "phy1_rxd[1]"    IO_TYPE=LVCMOS25;
+IOBUF PORT "phy1_rxd[2]"    IO_TYPE=LVCMOS25;
+IOBUF PORT "phy1_rxd[3]"    IO_TYPE=LVCMOS25;
+IOBUF PORT "phy1_rxctrl"    IO_TYPE=LVCMOS25;
+IOBUF PORT "phy1_mdio"      IO_TYPE=LVCMOS25 PULLMODE=UP;
+IOBUF PORT "phy1_mdc"       IO_TYPE=LVCMOS25;
+IOBUF PORT "phy1_resetn"    IO_TYPE=LVCMOS25;
+
+## ============================================================
+## PHY 2 (U15) - FPGA Bank 3, VCCIO = 2.5V
+## ============================================================
+
+# PHY 2 clocks
+LOCATE COMP "phy2_rxclk"    SITE "J19";
+
+# PHY 2 TX
+LOCATE COMP "phy2_txclk"    SITE "C20";
+LOCATE COMP "phy2_txd[0]"   SITE "J17";
+LOCATE COMP "phy2_txd[1]"   SITE "J16";
+LOCATE COMP "phy2_txd[2]"   SITE "D19";
+LOCATE COMP "phy2_txd[3]"   SITE "D20";
+LOCATE COMP "phy2_txctrl"   SITE "E19";
+
+# PHY 2 RX
+LOCATE COMP "phy2_rxd[0]"   SITE "G18";
+LOCATE COMP "phy2_rxd[1]"   SITE "G16";
+LOCATE COMP "phy2_rxd[2]"   SITE "H18";
+LOCATE COMP "phy2_rxd[3]"   SITE "H17";
+LOCATE COMP "phy2_rxctrl"   SITE "F19";
+
+# PHY 2 MDIO
+LOCATE COMP "phy2_mdio"     SITE "H20";
+LOCATE COMP "phy2_mdc"      SITE "G19";
+
+# PHY 2 control
+LOCATE COMP "phy2_resetn"   SITE "F20";
+
+# PHY 2 I/O attributes
+IOBUF PORT "phy2_rxclk"     IO_TYPE=LVCMOS25;
+IOBUF PORT "phy2_txclk"     IO_TYPE=LVCMOS25 SLEWRATE=FAST;
+IOBUF PORT "phy2_txd[0]"    IO_TYPE=LVCMOS25 SLEWRATE=FAST;
+IOBUF PORT "phy2_txd[1]"    IO_TYPE=LVCMOS25 SLEWRATE=FAST;
+IOBUF PORT "phy2_txd[2]"    IO_TYPE=LVCMOS25 SLEWRATE=FAST;
+IOBUF PORT "phy2_txd[3]"    IO_TYPE=LVCMOS25 SLEWRATE=FAST;
+IOBUF PORT "phy2_txctrl"    IO_TYPE=LVCMOS25 SLEWRATE=FAST;
+IOBUF PORT "phy2_rxd[0]"    IO_TYPE=LVCMOS25;
+IOBUF PORT "phy2_rxd[1]"    IO_TYPE=LVCMOS25;
+IOBUF PORT "phy2_rxd[2]"    IO_TYPE=LVCMOS25;
+IOBUF PORT "phy2_rxd[3]"    IO_TYPE=LVCMOS25;
+IOBUF PORT "phy2_rxctrl"    IO_TYPE=LVCMOS25;
+IOBUF PORT "phy2_mdio"      IO_TYPE=LVCMOS25 PULLMODE=UP;
+IOBUF PORT "phy2_mdc"       IO_TYPE=LVCMOS25;
+IOBUF PORT "phy2_resetn"    IO_TYPE=LVCMOS25;
+
+## ============================================================
+## 100MHz board oscillator (LVDS, active)
+## ============================================================
+
+LOCATE COMP "clk100_p" SITE "P3";
+IOBUF PORT "clk100_p" IO_TYPE=LVDS;
+
+## ============================================================
+## UART TX (active)
+## ============================================================
+
+LOCATE COMP "uart_txd" SITE "A11";
+IOBUF PORT "uart_txd" IO_TYPE=LVCMOS33;
+
+## ============================================================
+## UART RX (active)
+## ============================================================
+
+LOCATE COMP "uart_rxd" SITE "C11";
+IOBUF PORT "uart_rxd" IO_TYPE=LVCMOS33;
+
+## ============================================================
+## SERDES Reference Clock Control (ispClock5406D)
+## ============================================================
+
+LOCATE COMP "refclk_en"     SITE "C12";
+LOCATE COMP "refclk_rst_n"  SITE "R1";
+
+IOBUF PORT "refclk_en"      IO_TYPE=LVCMOS33;
+IOBUF PORT "refclk_rst_n"   IO_TYPE=LVCMOS33;
+
+## ============================================================
+## General Purpose LEDs (active low, Bank 0, LVCMOS25)
+## ============================================================
+
+LOCATE COMP "led[0]" SITE "E16";
+LOCATE COMP "led[1]" SITE "D17";
+LOCATE COMP "led[2]" SITE "D18";
+LOCATE COMP "led[3]" SITE "E18";
+LOCATE COMP "led[4]" SITE "F17";
+LOCATE COMP "led[5]" SITE "F18";
+LOCATE COMP "led[6]" SITE "E17";
+LOCATE COMP "led[7]" SITE "F16";
+
+IOBUF PORT "led[0]" IO_TYPE=LVCMOS25;
+IOBUF PORT "led[1]" IO_TYPE=LVCMOS25;
+IOBUF PORT "led[2]" IO_TYPE=LVCMOS25;
+IOBUF PORT "led[3]" IO_TYPE=LVCMOS25;
+IOBUF PORT "led[4]" IO_TYPE=LVCMOS25;
+IOBUF PORT "led[5]" IO_TYPE=LVCMOS25;
+IOBUF PORT "led[6]" IO_TYPE=LVCMOS25;
+IOBUF PORT "led[7]" IO_TYPE=LVCMOS25;
+
+## ============================================================
+## Clock constraints
+## ============================================================
+
+FREQUENCY PORT "clk100_p"    100.0 MHz;
+FREQUENCY PORT "phy1_rxclk"  125.0 MHz;
+FREQUENCY PORT "phy2_rxclk"  125.0 MHz;
+
+## Unified MAC-side per-port clocks (present in both SGMII and RGMII builds)
+FREQUENCY NET "u_ethernet_top.u_eth_dataplane.port1_wr_clk" 125.0 MHz;
+FREQUENCY NET "u_ethernet_top.u_eth_dataplane.port1_rd_clk" 125.0 MHz;
+FREQUENCY NET "u_ethernet_top.u_eth_dataplane.port2_wr_clk" 125.0 MHz;
+FREQUENCY NET "u_ethernet_top.u_eth_dataplane.port2_rd_clk" 125.0 MHz;

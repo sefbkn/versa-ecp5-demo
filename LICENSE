@@ -1,0 +1,31 @@
+Copyright (c) 2026 Youssef Boukenken
+
+This repository contains a mix of original hardware design files, original
+software/tooling, and vendored third-party code.
+
+Original hardware design files
+- `rtl/` except `rtl/external/`
+- `constraints/`
+- `sim/`
+
+are licensed under the CERN Open Hardware Licence Version 2 - Strongly
+Reciprocal (`CERN-OHL-S-2.0`). See `LICENSES/CERN-OHL-S-2.0.txt`.
+
+Original software, tooling, build scripts, and documentation
+- `firmware/`
+- `tools/`
+- root-level build/docs files such as `Makefile`, `README.md`, and `.gitignore`
+
+are licensed under the MIT License. See `LICENSES/MIT.txt`.
+
+Third-party code in `rtl/external/` retains its upstream licenses and notices.
+In particular, `rtl/external/vexriscv/` remains under its upstream MIT license
+and includes its own `LICENSE` file.
+
+If a file contains an SPDX identifier or an explicit license notice, that
+file-level notice takes precedence over these directory defaults.
+
+Canonical license text sources:
+- `CERN-OHL-S-2.0`: `https://ohwr.org/cern_ohl_s_v2.txt`
+  Linked as the definitive text by CERN at `https://cern-ohl.web.cern.ch/`.
+- `MIT`: `https://spdx.org/licenses/MIT.txt`

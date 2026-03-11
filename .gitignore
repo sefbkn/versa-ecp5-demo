@@ -1,0 +1,11 @@
+# macOS / editor
+.DS_Store
+*.swp
+*.swo
+
+# Python cache
+__pycache__/
+*.pyc
+
+# Generated build outputs
+build/
